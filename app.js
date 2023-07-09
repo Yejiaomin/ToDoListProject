@@ -44,6 +44,8 @@ app.get("/",function(req,res){
     }else{
       res.render("list", {listTitle:"Today",newItemsList:items});
     }
+  }).catch(function (err) {
+    console.log(err);
   });
 });
 app.get("/:customListName",function(req,res){

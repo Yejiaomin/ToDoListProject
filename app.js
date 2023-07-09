@@ -8,7 +8,10 @@ let workItems = [];
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
-mongoose.connect("mongodb+srv://Jiaomin:yjm5396213@cluster0.qgr0qik.mongodb.net/todolistDB");
+mongoose.connect("mongodb+srv://Jiaomin:yjm5396213@cluster0.qgr0qik.mongodb.net/todolistDB").then(
+  function () {
+    console.log('DB connected!!!');
+  });
 const itemsSchema =new mongoose.Schema( {
   name: String
 });
